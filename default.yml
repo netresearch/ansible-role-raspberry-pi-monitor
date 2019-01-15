@@ -3,6 +3,3 @@
   hosts: localhost
   roles:
     - ansible-role-raspberry-pi-monitor
-  vars:
-    autostart_user: pi
-    chrome_url: "http://sobol.nr/intern/monitor/"
