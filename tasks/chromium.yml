@@ -5,7 +5,6 @@
     state: installed
   notify: Restart lightdm
 
-
 - name: "Creating LXDE autostart configuration"
   template:
     src: "templates/autostart.j2"
@@ -13,12 +12,11 @@
   notify: Restart lightdm
 
 - name: "Disabling lightdm screensaver"
-  action:
-    lineinfile:
-      dest=/etc/lightdm/lightdm.conf
-      regexp="xserver-command="
-      line="xserver-command=X -s 0 -dpms"
-      state=present
+  lineinfile:
+    dest=/etc/lightdm/lightdm.conf
+    regexp="xserver-command="
+    line="xserver-command=X -s 0 -dpms"
+    state=present
   notify: Restart lightdm
 
 - name: "Restart lightdm"
