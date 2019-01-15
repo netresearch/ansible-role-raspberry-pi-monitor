@@ -1,0 +1,6 @@
+---
+- name: "Initializing the monitoring pi"
+  hosts: monitoring
+  become: true
+  become_user: root
+  include-tasks: chromium.yml

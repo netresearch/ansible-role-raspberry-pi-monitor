@@ -1,0 +1,21 @@
+---
+galaxy_info:
+  author: Tobias Schneehardt <tobigames200@gmail.com>
+  description: This role contains a basic setup for monitoring pis at NR.
+  company: Netresearch GmbH & Co. KG
+  license: BSD
+  min_ansible_version: 2.5
+  platforms:
+    - name: Debian
+      versions:
+        - wheezy
+        - jessie
+        - stretch
+        - buster
+    - name: Ubuntu
+      versions:
+        - trusty
+        - xenial
+        - bionic
+  galaxy_tags: []
+  dependencies: []

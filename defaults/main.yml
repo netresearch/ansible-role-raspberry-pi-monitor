@@ -1,0 +1,4 @@
+---
+# defaults file for ansible-role-raspberry-pi-monitor
+website: "http://sobol.nr/intern/monitor/"
+autostart_browser: true

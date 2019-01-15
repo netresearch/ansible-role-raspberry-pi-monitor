@@ -1,0 +1,27 @@
+---
+- name: "Install unclutter"
+  apt:
+    name: unclutter
+    state: installed
+  notify: Restart lightdm
+
+
+- name: "Creating LXDE autostart configuration"
+  template:
+    src: "templates/autostart.j2"
+    dest: "/home/{{ autostart_user }}/.config/lxsession/LXDE-pi/autostart"
+  notify: Restart lightdm
+
+- name: "Disabling lightdm screensaver"
+  action:
+    lineinfile:
+      dest=/etc/lightdm/lightdm.conf
+      regexp="xserver-command="
+      line="xserver-command=X -s 0 -dpms"
+      state=present
+  notify: Restart lightdm
+
+- name: "Restart lightdm"
+  service:
+    name: lightdm
+  state: restarted
