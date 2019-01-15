@@ -1,0 +1,5 @@
+---
+- name: Monitoring Pi
+  hosts: localhost
+  roles:
+    - ansible-role-raspberry-pi-monitor

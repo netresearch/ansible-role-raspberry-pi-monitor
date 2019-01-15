@@ -1,0 +1,42 @@
+---
+- name: "Installing unclutter and xdotools"
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - unclutter
+    - xdotool
+  notify: Restart lightdm
+
+- name: "Creating lxsession config directory"
+  file:
+    path: "/home/{{ pi_user_name }}/.config/lxsession"
+    state: directory
+
+- name: "Creating X default config directory"
+  file:
+    path: "/home/{{ pi_user_name }}/.config/lxsession/LXDE-pi"
+    state: directory
+
+- name: "Creating LXDE autostart configuration"
+  template:
+    src: "templates/autostart.j2"
+    dest: "/home/{{ pi_user_name }}/.config/lxsession/LXDE-pi/autostart"
+  notify: Restart lightdm
+
+- name: "Creating kiosk script"
+  template:
+    src: "templates/kiosk.j2"
+    dest: "/home/{{ pi_user_name }}/kiosk.sh"
+    owner: "{{ pi_user_name }}"
+    group: "{{ pi_user_group }}"
+    mode: 0755
+  notify: Restart lightdm
+
+- name: "Disabling lightdm screensaver"
+  lineinfile:
+    dest: /etc/lightdm/lightdm.conf
+    regexp: "xserver-command="
+    line: "xserver-command=X -s 0 -dpms"
+    state: present
+  notify: Restart lightdm

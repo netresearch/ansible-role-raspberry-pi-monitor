@@ -1,0 +1,7 @@
+---
+# defaults file for ansible-role-raspberry-pi-monitor
+pi_user_name: pi
+pi_user_group: pi
+chromium_url: "https://www.youtube.com/"
+chromium_scale_factor: "1.0"
+chromium_windowname: "YouTube - Chromium"

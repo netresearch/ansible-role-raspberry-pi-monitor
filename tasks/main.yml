@@ -1,0 +1,10 @@
+---
+- name: "Rotate the screen"
+  lineinfile:
+    path: /boot/config.txt
+    regex: '^display_rotate='
+    line: "display_rotate=3"
+  register: screen_rotation
+  notify: Reboot machine
+
+- include_tasks: chromium.yml
