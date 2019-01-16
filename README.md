@@ -1,4 +1,8 @@
-# Ansible roles for Raspberry Pi monitoring kiosk
+# Ansible roles for basic Raspberry Pi setup
+
+## Warning
+
+**You may not be able to login as root!**
 
 ## Requirements
 
@@ -18,22 +22,3 @@ Raspbian (with ssh-server enabled and key copied) >= stretch
  8. Open a terminal, change into the boot directory of the µSD-card and execute `sudo touch ssh`.
  9. Put the µSD-card into the Pi and plug in the µ-USB-cable for power.
 10. `Enjoy!`
-
-## Variables
-
-| variable   | state   | example                                             |
-| ---------- | ------- | --------------------------------------------------- |
-| chrome_url | "URL"   | "http://username:password@sobol.nr/intern/monitor/" |
-
-## Example playbook
-
-```yaml
-- name: Configure raspberry pi as monitoring kiosk
-  hosts: kiosk.netresearch.nr
-  tasks:
-    - name: Configure monitoring kiosk
-      include_role:
-        name: raspberry-pi-monitor
-      vars:
-        chrome_url: "http://username:password@sobol.nr/intern/monitor/"
-```
