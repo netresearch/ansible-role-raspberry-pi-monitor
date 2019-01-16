@@ -1,5 +1,2 @@
 ---
-- name: "Initializing the monitoring pi"
-  become: true
-  become_user: root
-  include_tasks: chromium.yml
+- include_tasks: chromium.yml
