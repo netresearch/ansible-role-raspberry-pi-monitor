@@ -2,7 +2,7 @@
 
 ## Warning
 
-**You may not be able to login as root!**
+**You may not be able to login as root!** 😢
 
 ## Requirements
 
