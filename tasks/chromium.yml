@@ -12,17 +12,12 @@
     - xdotool
   notify: Restart lightdm
 
-- name: "Creating X config directories 1"
-  file:
-    path: /home/pi/.config
-    state: directory
-
-- name: "Creating X config directories 2"
+- name: "Creating lxsession config directory"
   file:
     path: /home/pi/.config/lxsession
     state: directory
 
-- name: "Creating X config directories 3"
+- name: "Creating X default config directory"
   file:
     path: /home/pi/.config/lxsession/LXDE-pi
     state: directory
@@ -31,6 +26,12 @@
   template:
     src: "templates/autostart.j2"
     dest: "/home/{{ autostart_user }}/.config/lxsession/LXDE-pi/autostart"
+  notify: Restart lightdm
+
+- name: "Creating kiosk script"
+  template:
+    src: "templates/kiosk.j2"
+    dest: "/home/{{ autostart_user }}/kiosk.sh"
   notify: Restart lightdm
 
 - name: "Disabling lightdm screensaver"
