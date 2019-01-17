@@ -21,13 +21,13 @@
 - name: "Creating LXDE autostart configuration"
   template:
     src: "templates/autostart.j2"
-    dest: "/home/{{ autostart_user }}/.config/lxsession/LXDE-pi/autostart"
+    dest: "/home/pi/.config/lxsession/LXDE-pi/autostart"
   notify: Restart lightdm
 
 - name: "Creating kiosk script"
   template:
     src: "templates/kiosk.j2"
-    dest: "/home/{{ autostart_user }}/kiosk.sh"
+    dest: "/home/pi/kiosk.sh"
   notify: Restart lightdm
 
 - name: "Disabling lightdm screensaver"
