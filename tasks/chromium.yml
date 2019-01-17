@@ -9,7 +9,7 @@
   vars:
     packages:
     - unclutter
-    - xdotools
+    - xdotool
   notify: Restart lightdm
 
 - name: "Creating X config directories 1"
