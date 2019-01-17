@@ -1,11 +1,16 @@
 ---
-
 - name: "Setting monitoring pi's hostname"
   hostname:
     name: "iot-112.netresearch.nr"
 
-- name: "Setting chromium as default browser"
-  shell:
-    free_form: 'update-alternatives --config "chromium-browser"'
+- name: "Flipping the screen"
+  lineinfile:
+      path: /boot/config.txt
+      regex: '^display_rotate='
+      line: "display_rotate=3"
+
+- name: "Applying changes"
+  reboot:
+    reboot_timeout: 50
 
 - include_tasks: chromium.yml
