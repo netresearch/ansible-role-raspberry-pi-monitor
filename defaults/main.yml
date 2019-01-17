@@ -2,4 +2,5 @@
 # defaults file for ansible-role-raspberry-pi-monitor
 autostart_browser: true
 autostart_user: pi
-chrome_url: "http://sobol.nr/intern/monitor/"
+chrome_url: "http://youtube.com"
+windowname: "YouTube - Chromium"

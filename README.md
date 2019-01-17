@@ -25,9 +25,10 @@ Raspbian (with ssh-server enabled and key copied) >= stretch
 
 ## Variables
 
-| variable   | state   | example                                             |
-| ---------- | ------- | --------------------------------------------------- |
-| chrome_url | "URL"   | "http://username:password@sobol.nr/intern/monitor/" |
+| variable   | state             | example               |
+| ---------- | ----------------- | --------------------- |
+| chrome_url | "URL"             | "http://youtube.com/" |
+| windowname | "NAME - Chromium" | "YouTube - Chromium"  |
 
 ## Example playbook
 
