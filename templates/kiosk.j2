@@ -1,4 +1,4 @@
 #!/bin/bash
 
-chromium-browser --noerrdialogs --incognito --kiosk {{ chrome_url}} &
-sleep 20 && xdotool search {{ windowname }} windowactivate --sync key --clearmodifiers key KP_Enter
+chromium-browser --noerrdialogs --incognito --kiosk {{ chrome_url }} &
+sleep 20 && xdotool search "monitoring.nr/munin-cgi/ - Chromium" windowactivate --sync key --clearmodifiers key KP_Enter
