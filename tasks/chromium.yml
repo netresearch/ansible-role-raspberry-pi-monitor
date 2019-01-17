@@ -3,10 +3,13 @@
   shell: 
     freeform: "xdg-settings set default-web-browser chromium-browser.desktop"
 
-- name: "Installing unclutter"
+- name: "Installing unclutter and xdotools"
   apt:
-    name: unclutter
-    state: present
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - unclutter
+    - xdotools
   notify: Restart lightdm
 
 - name: "Creating X config directories 1"
