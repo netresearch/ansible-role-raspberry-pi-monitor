@@ -24,6 +24,11 @@
     dest: "/home/pi/.config/lxsession/LXDE-pi/autostart"
   notify: Restart lightdm
 
+- name: Changing permissions of "/home/pi/kiosk.sh", adding "+x"
+  file: 
+    dest: /home/pi/kiosk.sh
+    mode: a+x
+
 - name: "Creating kiosk script"
   template:
     src: "templates/kiosk.j2"
