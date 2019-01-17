@@ -1,4 +1,8 @@
 ---
+- name: "Setting chromium as default browser"
+  shell: 
+    freeform: "xdg-settings set default-web-browser chromium-browser.desktop"
+
 - name: "Installing unclutter"
   apt:
     name: unclutter
