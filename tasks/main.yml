@@ -1,2 +1,11 @@
 ---
+
+- name: "Setting monitoring pi's hostname"
+  hostname:
+    name: "iot-112.netresearch.nr"
+
+- name: "Setting chromium as default browser"
+  shell:
+    free_form: 'update-alternatives --config "chromium-browser"'
+
 - include_tasks: chromium.yml
