@@ -2,7 +2,7 @@
 galaxy_info:
   author: Tobias Schneehardt <tobigames200@gmail.com>
   description: This role contains a basic setup for monitoring pis at NR.
-  company: Netresearch GmbH & Co. KG
+  company: Netresearch DTT GmbH
   license: BSD
   min_ansible_version: 2.5
   platforms:
