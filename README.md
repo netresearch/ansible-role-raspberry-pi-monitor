@@ -1,9 +1,5 @@
 # Ansible roles for Raspberry Pi monitoring kiosk
 
-## Warning
-
-**You may not be able to login as root!** 😢
-
 ## Requirements
 
 Ansible >= 2.5
