@@ -5,9 +5,9 @@
 
 - name: "Flipping the screen"
   lineinfile:
-      path: /boot/config.txt
-      regex: '^display_rotate='
-      line: "display_rotate=3"
+    path: /boot/config.txt
+    regex: '^display_rotate='
+    line: "display_rotate=3"
 
 - name: "Applying changes"
   reboot:
