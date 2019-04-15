@@ -2,7 +2,7 @@
 
 ## Requirements
 
-Ansible >= 2.5
+Ansible >= 2.7
 
 Raspbian (with ssh-server enabled and key copied) >= stretch
 
