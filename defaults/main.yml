@@ -1,5 +1,7 @@
 ---
 # defaults file for ansible-role-raspberry-pi-monitor
+pi_user_name: pi
+pi_user_group: pi
 autostart_browser: true
 autostart_user: pi
 chrome_url: "http://youtube.com"
