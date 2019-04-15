@@ -1,12 +1,14 @@
 ---
-- name: "Flipping the screen"
+- name: "Rotate the screen"
   lineinfile:
     path: /boot/config.txt
     regex: '^display_rotate='
     line: "display_rotate=3"
+  register: screen_rotation
 
 - name: "Applying changes"
   reboot:
     reboot_timeout: 50
+  when: screen_rotation.changed
 
 - include_tasks: chromium.yml
