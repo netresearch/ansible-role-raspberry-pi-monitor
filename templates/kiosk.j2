@@ -2,8 +2,8 @@
 
 chromium-browser --noerrdialogs \
                  --incognito \
-                 --kiosk {{ chromium_url_url }} \
-                 --force-device-scale-factor={{ chromium_url_scale_factor }} \
+                 --kiosk {{ chromium_url }} \
+                 --force-device-scale-factor={{ chromium_scale_factor }} \
                  --disable-infobars &
 
 sleep 20
