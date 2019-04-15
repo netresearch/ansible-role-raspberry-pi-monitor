@@ -28,12 +28,8 @@
   template:
     src: "templates/kiosk.j2"
     dest: "/home/pi/kiosk.sh"
+    mode: 0755
   notify: Restart lightdm
-
-- name: Changing permissions of "/home/pi/kiosk.sh", adding "+x"
-  file: 
-    dest: /home/pi/kiosk.sh
-    mode: a+x
 
 - name: "Disabling lightdm screensaver"
   lineinfile:
