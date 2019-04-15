@@ -6,7 +6,7 @@
     line: "display_rotate=3"
   register: screen_rotation
 
-- name: "Applying changes"
+- name: "Reboot to apply changes"
   reboot:
     reboot_timeout: 50
   when: screen_rotation.changed
