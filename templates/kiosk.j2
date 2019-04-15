@@ -6,4 +6,9 @@ chromium-browser --noerrdialogs \
                  --force-device-scale-factor={{ chromium_url_scale_factor }} \
                  --disable-infobars &
 
-sleep 20 && xdotool search "{{ chromium_windowname }}" windowactivate --sync key --clearmodifiers key KP_Enter
+sleep 20
+
+xdotool search "{{ chromium_windowname }}" \
+        windowactivate \
+        --sync key \
+        --clearmodifiers key KP_Enter
