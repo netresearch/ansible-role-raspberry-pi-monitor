@@ -5,4 +5,5 @@ pi_user_group: pi
 autostart_browser: true
 autostart_user: pi
 chrome_url: "http://youtube.com"
+chrome_scale_factor: "1.0"
 windowname: "YouTube - Chromium"

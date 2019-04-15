@@ -1,4 +1,4 @@
 #!/bin/bash
 
-chromium-browser --noerrdialogs --incognito --kiosk {{ chrome_url }} &
+chromium-browser --noerrdialogs --incognito --kiosk {{ chrome_url }} --force-device-scale-factor={{ chrome_scale_factor }} &
 sleep 20 && xdotool search "{{ windowname }}" windowactivate --sync key --clearmodifiers key KP_Enter
