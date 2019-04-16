@@ -1,4 +1,8 @@
 ---
+- name: "Reboot machine"
+  reboot:
+    reboot_timeout: 60
+
 - name: "Restart lightdm"
   service:
     name: lightdm

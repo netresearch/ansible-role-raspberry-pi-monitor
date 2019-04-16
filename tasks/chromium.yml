@@ -10,30 +10,28 @@
 
 - name: "Creating lxsession config directory"
   file:
-    path: /home/pi/.config/lxsession
+    path: "/home/{{ pi_user_name }}/.config/lxsession"
     state: directory
 
 - name: "Creating X default config directory"
   file:
-    path: /home/pi/.config/lxsession/LXDE-pi
+    path: "/home/{{ pi_user_name }}/.config/lxsession/LXDE-pi"
     state: directory
 
 - name: "Creating LXDE autostart configuration"
   template:
     src: "templates/autostart.j2"
-    dest: "/home/pi/.config/lxsession/LXDE-pi/autostart"
+    dest: "/home/{{ pi_user_name }}/.config/lxsession/LXDE-pi/autostart"
   notify: Restart lightdm
 
 - name: "Creating kiosk script"
   template:
     src: "templates/kiosk.j2"
-    dest: "/home/pi/kiosk.sh"
+    dest: "/home/{{ pi_user_name }}/kiosk.sh"
+    owner: "{{ pi_user_name }}"
+    group: "{{ pi_user_group }}"
+    mode: 0755
   notify: Restart lightdm
-
-- name: Changing permissions of "/home/pi/kiosk.sh", adding "+x"
-  file: 
-    dest: /home/pi/kiosk.sh
-    mode: a+x
 
 - name: "Disabling lightdm screensaver"
   lineinfile:

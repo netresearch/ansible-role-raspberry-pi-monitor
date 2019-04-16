@@ -1,16 +1,10 @@
 ---
-- name: "Setting monitoring pi's hostname"
-  hostname:
-    name: "iot-112.netresearch.nr"
-
-- name: "Flipping the screen"
+- name: "Rotate the screen"
   lineinfile:
     path: /boot/config.txt
     regex: '^display_rotate='
     line: "display_rotate=3"
-
-- name: "Applying changes"
-  reboot:
-    reboot_timeout: 50
+  register: screen_rotation
+  notify: Reboot machine
 
 - include_tasks: chromium.yml
