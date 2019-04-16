@@ -1,10 +1,11 @@
-# Ansible roles for Raspberry Pi monitoring kiosk
+# Ansible role for Raspberry Pi monitoring kiosk
+
+This role provides a basic setup for Raspberry Pi monitor (kiosk mode).
 
 ## Requirements
 
-Ansible >= 2.7
-
-Raspbian (with ssh-server enabled and key copied) >= stretch
+* Ansible >= 2.7
+* Raspbian Stretch with Desktop
 
 ## Setting up a Raspberry Pi
 
@@ -21,19 +22,23 @@ Raspbian (with ssh-server enabled and key copied) >= stretch
 
 ## Variables
 
-| variable   | state             | example               |
+| variable   | description             | default               |
 | ---------- | ----------------- | --------------------- |
-| chrome_url | "URL"             | "http://youtube.com/" |
+| pi_user_name | Default desktop user | `"pi"` |
+| pi_user_group | Primary group of default desktop user | `"pi"` |
+| chromium_url | The URL to open in kiosk mode | `"https://www.youtube.com/"` |
+| chromium_scale_factor | Device scale factor | `"1.0"` |
+| chromium_windowname | Chromium window title | `"YouTube - Chromium"` |
 
 ## Example playbook
 
 ```yaml
 - name: Configure raspberry pi as monitoring kiosk
-  hosts: kiosk.netresearch.nr
+  hosts: localhost
   tasks:
     - name: Configure monitoring kiosk
       include_role:
         name: raspberry-pi-monitor
       vars:
-        chrome_url: "http://username:password@sobol.nr/intern/monitor/"
+        chromium_url: "https://www.youtube.com/"
 ```
