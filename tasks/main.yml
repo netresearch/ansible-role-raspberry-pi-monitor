@@ -5,10 +5,6 @@
     regex: '^display_rotate='
     line: "display_rotate=3"
   register: screen_rotation
-
-- name: "Reboot to apply changes"
-  reboot:
-    reboot_timeout: 50
-  when: screen_rotation.changed
+  notify: Reboot machine
 
 - include_tasks: chromium.yml
